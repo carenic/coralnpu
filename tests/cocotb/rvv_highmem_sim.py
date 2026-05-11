@@ -44,13 +44,13 @@ async def core_mini_axi_run_wfi_in_all_slots_highmem(dut):
 async def core_mini_rvv_matmul_test(dut):
     """Testbench to test matmul with rvv intrinsics using custom memory.
 
-    This test performs matmul in M1 16x24 M2 24x16 matrices.
+    This test performs matmul in M1 32x128 M2 128x32 matrices.
     Compares results with native numpy matmul.
     """
 
-    LHS_ROWS = 16
-    RHS_COLS = 16
-    INNER = 48
+    LHS_ROWS = 32
+    RHS_COLS = 32
+    INNER = 128
 
     fixture = await Fixture.Create(dut, highmem=True)
     r = runfiles.Create()

@@ -707,7 +707,7 @@ cocotb_test_suite(
             "@bazel_tools//tools/python/runfiles",
         ],
         "data": ["//tests/cocotb/rvv/ml_ops:rvv_mlop_tests"],
-        "size": "medium",
+        "size": "enormous",
     },
     vcs_build_args = VCS_BUILD_ARGS,
     vcs_data = ["//tests/cocotb/rvv/ml_ops:rvv_mlop_tests"] + VCS_COMMON_DATA,

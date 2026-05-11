@@ -22,14 +22,14 @@ async def core_mini_rvv_matmul_c_test(dut):
     """Test integer matmul with RVV C intrinsics.
 
     Dimensions:
-    - Left Hand Side (LHS) matrix: 16 rows x 48 columns
-    - Right Hand Side (RHS) matrix: 48 rows x 16 columns
-    - Result matrix: 16 rows x 16 columns
+    - Left Hand Side (LHS) matrix: 32 rows x 128 columns
+    - Right Hand Side (RHS) matrix: 128 rows x 32 columns
+    - Result matrix: 32 rows x 32 columns
     """
 
-    LHS_ROWS = 16
-    RHS_COLS = 16
-    INNER = 48
+    LHS_ROWS = 32
+    RHS_COLS = 32
+    INNER = 128
 
     fixture = await Fixture.Create(dut)
     r = runfiles.Create()
@@ -66,14 +66,14 @@ async def core_mini_rvv_matmul_asm_test(dut):
     """Test integer matmul with RVV assembly.
 
     Dimensions:
-    - Left Hand Side (LHS) matrix: 16 rows x 48 columns
-    - Right Hand Side (RHS) matrix: 48 rows x 16 columns
-    - Result matrix: 16 rows x 16 columns
+    - Left Hand Side (LHS) matrix: 32 rows x 128 columns
+    - Right Hand Side (RHS) matrix: 128 rows x 32 columns
+    - Result matrix: 32 rows x 32 columns
     """
 
-    LHS_ROWS = 16
-    RHS_COLS = 16
-    INNER = 48
+    LHS_ROWS = 32
+    RHS_COLS = 32
+    INNER = 128
 
     fixture = await Fixture.Create(dut)
     r = runfiles.Create()
