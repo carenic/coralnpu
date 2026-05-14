@@ -108,6 +108,10 @@ class CoralNPUV2Simulator:
       raise TypeError('data must be a numpy uint32')
     self.sim.WriteWord(address, data)
 
+  def write_ptr(self, address, ptr_address):
+    self.sim.WriteWord(address, ptr_address & 0xFFFFFFFF)
+
+
   def get_elf_entry_and_symbol(self, filename, symbol_names=None):
     """Returns the entry point and a dictionary of symbol addresses from an ELF file."""
     symbol_map = {}
